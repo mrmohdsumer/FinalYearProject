@@ -19,7 +19,9 @@ const kColorAndroidGreen = Color.fromRGBO(40, 38, 56, 1);
 const kColorEggshell = Color(0xff0040ff);
 const kColorBitterSweetShimmer = Color(0xFFbc4749);
 
-const kBgColor = kColorGreen;
+// const kBgColor = kColorGreen;
+const kBgColor = Color(0xffF5F5F5); // light gray
+const kBgColor2 = Color(0xffEEF2F5); // soft modern background
 
 const kTitleTextStyle = TextStyle(
   fontFamily: kDisplayFont,

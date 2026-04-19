@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Grapes Lesion Detection',
+
+
       home: const Intro(),
       routes: {
         PageRoutes.home: (context) => const MainScreen(),

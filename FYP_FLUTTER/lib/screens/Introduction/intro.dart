@@ -73,12 +73,12 @@ class Background extends StatelessWidget {
             Positioned(
               top: 0,
               left: 0,
-              child: SvgPicture.asset("assets/images/Eclipse1.svg"),
+              child: SvgPicture.asset("assets/images/Couter1.svg"),
             ),
             Positioned(
               top: 0,
               right: 0,
-              child: SvgPicture.asset("assets/images/Eclipse2.svg"),
+              child: SvgPicture.asset("assets/images/Couter2.svg"),
             ),
             child,
           ],
