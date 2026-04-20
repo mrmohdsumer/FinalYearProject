@@ -32,7 +32,7 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
 
   // Result
   _ResultStatus _resultStatus = _ResultStatus.notStarted;
-  String _skinLabel = ''; // Name of Error Message
+  String _grapesLabel = ''; // Name of Error Message
   double _accuracy = 0.0;
 
   Classifier? _classifier;
@@ -81,14 +81,7 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text(
-      //     "Skin Disease Detection",
-      //     style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-      //   ),
-      //   centerTitle: true,
-      //   backgroundColor: kColorAndroidGreen,
-      // ),
+      
       body: SizedBox(
         width: double.infinity,
         child: Column(
@@ -252,7 +245,7 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
 
     setState(() {
       _resultStatus = result;
-      _skinLabel = plantLabel;
+      _grapesLabel = plantLabel;
       _accuracy = accuracy;
     });
     }
@@ -271,7 +264,7 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
     if (_resultStatus == _ResultStatus.notFound) {
       title = 'Fail to recognise';
     } else if (_resultStatus == _ResultStatus.found) {
-      title = _skinLabel;
+      title = _grapesLabel;
     } else {
       title = '-';
     }

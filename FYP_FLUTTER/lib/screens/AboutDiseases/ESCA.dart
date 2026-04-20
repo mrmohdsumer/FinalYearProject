@@ -56,18 +56,6 @@ Infected berries may show spots or discoloration. Berries may shrivel and fall o
 """,
 style: TextStyle(fontSize: 18),
                 )),
-            // Padding(
-            //     padding: EdgeInsets.all(16),
-            //     child: Text(
-            //       "What is the difference between smallpox and chickenpox?",
-            //       style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-            //     )),
-            // Padding(
-            //     padding: EdgeInsets.all(16),
-            //     child: Text(
-            //       "Chickenpox and smallpox are both diseases that produce rashes on the skin, but they are different. For one thing, smallpox is a much more serious disease, causing severe illness and death. They are caused by different viruses. \n While the two diseases both produce rashes, the rashes themselves develop at different times and the rashes look different. Smallpox pustules look the same as each other, while the chickenpox rash develops in waves. The individual spots don’t look the same and some form scabs while others are still blistering. \n There’s another important difference. A massive global vaccination program has eradicated (wiped out) smallpox.",
-            //       style: TextStyle(fontSize: 18),
-            //     )),
           ],
         )),
         floatingActionButton: FloatingActionButton(
