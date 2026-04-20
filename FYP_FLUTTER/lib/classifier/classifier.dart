@@ -1,7 +1,4 @@
-import 'dart:math';
-import 'dart:typed_data';
 import 'package:flutter/services.dart';
-import 'package:flutter/foundation.dart';
 import 'package:image/image.dart' as img;
 import 'package:tflite_flutter/tflite_flutter.dart';
 
@@ -20,18 +17,13 @@ class Classifier {
   })  : _labels = labels,
         _model = model;
 
-  static Future<Classifier?> loadWith({
+  static Future<Classifier> loadWith({
     required String labelsFileName,
     required String modelFileName,
   }) async {
-    try {
-      final labels = await _loadLabels(labelsFileName);
-      final model = await _loadModel(modelFileName);
-      return Classifier._(labels: labels, model: model);
-    } catch (e) {
-      debugPrint('Error loading classifier: $e');
-      return null;
-    }
+    final labels = await _loadLabels(labelsFileName);
+    final model = await _loadModel(modelFileName);
+    return Classifier._(labels: labels, model: model);
   }
 
   static Future<ClassifierModel> _loadModel(String modelFileName) async {

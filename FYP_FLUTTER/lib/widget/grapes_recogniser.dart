@@ -8,8 +8,9 @@ import '../classifier/classifier.dart';
 import '../styles.dart';
 import 'grapes_photo_view.dart';
 
-const _labelsFileName = 'model/labels.txt';
-const _modelFileName = 'model/my_modelforexternalftr.tflite';
+/// Paths must match entries under `flutter: assets:` in pubspec.yaml.
+const _labelsFileName = 'assets/model/labels.txt';
+const _modelFileName = 'assets/model/my_modelforexternalftr.tflite';
 
 class GrapesRecogniser extends StatefulWidget {
   const GrapesRecogniser({Key? key}) : super(key: key);
@@ -34,7 +35,8 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
   String _skinLabel = ''; // Name of Error Message
   double _accuracy = 0.0;
 
-   Classifier? _classifier;
+  Classifier? _classifier;
+  bool _classifierLoadFinished = false;
 
   @override
   void initState() {
@@ -49,11 +51,31 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
       'model at $_modelFileName',
     );
 
-    final classifier = await Classifier.loadWith(
-      labelsFileName: _labelsFileName,
-      modelFileName: _modelFileName,
-    );
-    _classifier = classifier;
+    try {
+      final classifier = await Classifier.loadWith(
+        labelsFileName: _labelsFileName,
+        modelFileName: _modelFileName,
+      );
+      if (!mounted) return;
+      setState(() {
+        _classifier = classifier;
+        _classifierLoadFinished = true;
+      });
+    } catch (e, st) {
+      debugPrint('Error loading classifier: $e');
+      debugPrint('$st');
+      if (!mounted) return;
+      setState(() {
+        _classifier = null;
+        _classifierLoadFinished = true;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Failed to load model: $e'),
+          duration: const Duration(seconds: 6),
+        ),
+      );
+    }
   }
 
   @override
@@ -162,9 +184,19 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
   }
 
   void _onPickPhoto(ImageSource source) async {
+    if (!_classifierLoadFinished) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Model still loading...')),
+      );
+      return;
+    }
     if (_classifier == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Model still loading...")),
+        const SnackBar(
+          content: Text(
+            'Model is not available. Check the message above or restart the app.',
+          ),
+        ),
       );
       return;
     }
@@ -202,9 +234,9 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
       behavior: SnackBarBehavior.floating,
     ));
 
-    final imageInput = img.decodeImage(image.readAsBytesSync())!;
-        if (imageInput == null) {
-      throw Exception("Image decode failed");
+    final imageInput = img.decodeImage(image.readAsBytesSync());
+    if (imageInput == null) {
+      throw Exception('Image decode failed');
     }
 
 
