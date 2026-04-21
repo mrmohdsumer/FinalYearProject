@@ -10,7 +10,7 @@ import 'grapes_photo_view.dart';
 
 /// Paths must match entries under `flutter: assets:` in pubspec.yaml.
 const _labelsFileName = 'assets/model/labels.txt';
-const _modelFileName = 'assets/model/my_modelforexternalftr.tflite';
+const _modelFileName = 'assets/model/model.tflite';
 
 class GrapesRecogniser extends StatefulWidget {
   const GrapesRecogniser({Key? key}) : super(key: key);
