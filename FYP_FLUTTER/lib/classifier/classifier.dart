@@ -66,6 +66,7 @@ class Classifier {
     _model.interpreter.run(input, output);
 
     final scores = output[0] as List<double>;
+    // print(scores);
 
     List<ClassifierCategory> results = [];
     for (int i = 0; i < scores.length; i++) {
@@ -90,46 +91,14 @@ List<List<List<List<double>>>> _preProcess(img.Image image) {
         (x) {
           final pixel = resized.getPixel(x, y);
           return [
-            (pixel.r - 127.5) / 127.5,
-            (pixel.g - 127.5) / 127.5,
-            (pixel.b - 127.5) / 127.5,
+            pixel.r / 255.0,
+            pixel.g / 255.0,
+            pixel.b / 255.0,
           ];
         },
       ),
     ),
   ];
 }
-  // List _preProcess(img.Image image) {
-  //   int inputSize = _model.inputShape[1];
-
-  //   // Resize image
-  //   img.Image resized =
-  //       img.copyResize(image, width: inputSize, height: inputSize);
-
-  //   // Normalize
-  //   List<List<List<double>>> input = List.generate(
-  //     1,
-  //     (_) => List.generate(
-  //       inputSize,
-  //       (y) => List.generate(
-  //         inputSize,
-  //         (x) {
-  //           final pixel = resized.getPixel(x, y);
-  //           // return [
-  //           //   (img.getRed(pixel) - 127.5) / 127.5,
-  //           //   (img.getGreen(pixel) - 127.5) / 127.5,
-  //           //   (img.getBlue(pixel) - 127.5) / 127.5,
-  //           // ];
-  //           return [
-  //             (pixel.r - 127.5) / 127.5,
-  //             (pixel.g - 127.5) / 127.5,
-  //             (pixel.b - 127.5) / 127.5,
-  //           ];
-  //         },
-  //       ),
-  //     ),
-  //   );
-
-  //   return input;
-  // }
 }
+

@@ -1,6 +1,6 @@
 var _username = ["sumerkhan"];
 var _password = ["sumerkhan123"];
-int _i = 1;
+// int _i = 1;
 
 class Authentication {
   bool fetchCredentials(String username, String password) {
@@ -12,20 +12,20 @@ class Authentication {
     return false;
   }
 
-  bool checkUserRepeat(username) {
+  bool checkUserRepeat(String username) {
     for (var j = 0; j < _username.length; j++) {
       if (username == _username[j]) {
-        print(username);
+        // print(username);
         return true;
       }
     }
     return false;
   }
 
-  void insertCredentials(username, password) {
+  void insertCredentials(String username, String password) {
     _username.add(username);
     _password.add(password);
-    _i++;
+    // _i++;
   }
 
   bool isPasswordCompliant(String password, [int minLength = 6]) {
@@ -40,10 +40,10 @@ class Authentication {
         password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]'));
     bool hasMinLength = password.length > minLength;
 
-    return hasDigits &
-        hasUppercase &
-        hasLowercase &
-        hasSpecialCharacters &
+    return hasDigits &&
+        hasUppercase &&
+        hasLowercase &&
+        hasSpecialCharacters &&
         hasMinLength;
   }
 }

@@ -131,7 +131,7 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
 
   Widget _buildTitle() {
     return const Text(
-      'Grapes Recogniser',
+      'Grapes Recognizer',
       style: kTitleTextStyle,
       textAlign: TextAlign.center,
     );

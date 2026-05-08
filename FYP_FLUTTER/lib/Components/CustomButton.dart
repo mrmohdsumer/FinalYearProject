@@ -4,11 +4,13 @@ import 'package:image_picker/image_picker.dart';
 
 class CustomButton extends StatefulWidget {
   const CustomButton({
-    Key? key,
+    super.key,
+    // Key? key,
     required this.tex,
     required this.col,
     required this.option,
-  }) : super(key: key);
+  }) ;
+  // }) : super(key: key);
   final String tex;
   final Color col;
   final String option;
@@ -18,8 +20,10 @@ class CustomButton extends StatefulWidget {
 }
 
 class _CustomButtonState extends State<CustomButton> {
-  _getImage(ImageSource imageSource) async {
-    final XFile? image = await ImagePicker().pickImage(source: imageSource);
+    Future<void> _getImage(ImageSource imageSource) async {
+    await ImagePicker().pickImage(source: imageSource);
+  // _getImage(ImageSource imageSource) async {
+  //   final XFile? image = await ImagePicker().pickImage(source: imageSource);
     // if (image == null) return;
     // Navigator.of(context).push(
     //   MaterialPageRoute(
@@ -41,11 +45,14 @@ class _CustomButtonState extends State<CustomButton> {
         }
       },
       style: ButtonStyle(
-        minimumSize: MaterialStateProperty.all(Size(
+        minimumSize: WidgetStateProperty.all(
+          Size(
             MediaQuery.of(context).size.width * 0.7,
-            MediaQuery.of(context).size.height * 0.1)),
-        backgroundColor: MaterialStateProperty.all<Color>(widget.col),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+            MediaQuery.of(context).size.height * 0.1,
+            )
+            ),
+        backgroundColor: WidgetStateProperty.all<Color>(widget.col),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(28),
         )),
