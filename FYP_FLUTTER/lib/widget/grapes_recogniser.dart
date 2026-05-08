@@ -129,13 +129,13 @@ class _GrapesRecogniserState extends State<GrapesRecogniser> {
     return const Text('Analyzing...', style: kAnalyzingTextStyle);
   }
 
-  Widget _buildTitle() {
-    return const Text(
-      'Grapes Recognizer',
-      style: kTitleTextStyle,
-      textAlign: TextAlign.center,
-    );
-  }
+  // Widget _buildTitle() {
+  //   return const Text(
+  //     'Grapes Recognizer',
+  //     style: kTitleTextStyle,
+  //     textAlign: TextAlign.center,
+  //   );
+  // }
 
   Widget _buildPickPhotoButton({
     required ImageSource source,
