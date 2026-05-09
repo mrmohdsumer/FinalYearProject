@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Marburg extends StatelessWidget {
-  const Marburg({Key? key}) : super(key: key);
+  const Marburg({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(

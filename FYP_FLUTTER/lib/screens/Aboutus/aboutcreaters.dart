@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:grapes_lesions_detection/navigationDrawer/navigatorDrawer.dart';
 
 class AboutUs extends StatelessWidget {
-  const AboutUs({Key? key}) : super(key: key);
+  const AboutUs({super.key});
 
   static const String routeName = '/aboutcreators';
 

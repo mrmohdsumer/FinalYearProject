@@ -4,7 +4,7 @@ import 'package:grapes_lesions_detection/widget/grapes_recogniser.dart';
 import 'package:grapes_lesions_detection/navigationDrawer/navigatorDrawer.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  const MainScreen({super.key});
 
   static const String routName = '/homepage';
   @override

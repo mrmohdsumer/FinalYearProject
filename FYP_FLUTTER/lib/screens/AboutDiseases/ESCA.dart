@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Chickenpox extends StatelessWidget {
-  const Chickenpox({Key? key}) : super(key: key);
+  const Chickenpox({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -7,7 +7,7 @@ import 'package:grapes_lesions_detection/screens/AboutDiseases/greymold.dart';
 import 'package:grapes_lesions_detection/screens/AboutDiseases/Leafblight.dart';
 
 class AboutDisease extends StatefulWidget {
-  const AboutDisease({Key? key}) : super(key: key);
+  const AboutDisease({super.key});
 
   static const String routeName = '/aboutdisease';
   @override

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import '../routes/pageRoute.dart';
 
 class NavigatorDrawer extends StatelessWidget {
-  const NavigatorDrawer({Key? key}) : super(key: key);
+  const NavigatorDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +67,8 @@ class NavigatorDrawer extends StatelessWidget {
 class CreateDrawerHeader extends StatelessWidget {
   //class for the header of the
   const CreateDrawerHeader({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

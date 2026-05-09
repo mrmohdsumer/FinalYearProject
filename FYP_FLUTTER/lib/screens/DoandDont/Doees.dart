@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:grapes_lesions_detection/navigationDrawer/navigatorDrawer.dart';
 
 class Dos extends StatelessWidget {
-  const Dos({Key? key}) : super(key: key);
+  const Dos({super.key});
 
   static const String routeName = '/dodontpage';
 
@@ -417,10 +417,10 @@ SizedBox(height: 10),
 
 class Box extends StatelessWidget {
   const Box({
-    Key? key,
+    super.key,
     required this.points,
     required this.color,
-  }) : super(key: key);
+  });
 
   final Widget points;
   final Color? color;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Psoriasis extends StatelessWidget {
-  const Psoriasis({Key? key}) : super(key: key);
+  const Psoriasis({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(

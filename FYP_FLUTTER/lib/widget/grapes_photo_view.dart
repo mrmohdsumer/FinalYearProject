@@ -6,7 +6,7 @@ import '../styles.dart';
 
 class GPhotoView extends StatelessWidget {
   final File? file;
-  const GPhotoView({Key? key, this.file}) : super(key: key);
+  const GPhotoView({super.key, this.file});
 
   @override
   Widget build(BuildContext context) {

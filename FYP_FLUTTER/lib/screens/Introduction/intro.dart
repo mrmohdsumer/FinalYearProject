@@ -4,7 +4,7 @@ import 'package:grapes_lesions_detection/navigationDrawer/navigatorDrawer.dart';
 import 'package:grapes_lesions_detection/screens/login/login_screen.dart';
 
 class Intro extends StatelessWidget {
-  const Intro({Key? key}) : super(key: key);
+  const Intro({super.key});
 
   static const String routeName = '/intropage';
 
@@ -56,9 +56,9 @@ class Background extends StatelessWidget {
   final Widget child;
 
   const Background({
-    Key? key,
+    super.key,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

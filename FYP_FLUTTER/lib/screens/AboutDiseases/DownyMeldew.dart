@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Melanoma extends StatelessWidget {
-  const Melanoma({Key? key}) : super(key: key);
+  const Melanoma({super.key});
   @override
   Widget build(BuildContext context) {
     return SafeArea(
