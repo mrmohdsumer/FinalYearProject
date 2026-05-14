@@ -101,7 +101,6 @@ The main objective of this project is to help farmers and agriculture profession
 - Disease treatment recommendations
 
 ---
-
 ## Conclusion
 
 This project demonstrates the practical integration of Machine Learning, Deep Learning, TensorFlow Lite, and Flutter to build a real-world smart agriculture application for grape disease detection.
